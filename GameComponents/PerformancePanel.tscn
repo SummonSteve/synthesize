@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GameComponents/FPS.gd" type="Script" id=1]
+[ext_resource path="res://Assests/Fonts/FiraCode-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FPS" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 955.0
+margin_top = 1.0
+margin_right = 1009.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 2
+script = ExtResource( 1 )

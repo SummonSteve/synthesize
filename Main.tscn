@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GameSences/Select.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameComponents/AduioPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MusicStreamPlayer.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
+[ext_resource path="res://Assests/Audio/normal-hitnormal.wav" type="AudioStream" id=5]
+
+[node name="GameBase" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="SelectBase" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_horizontal_guides_": [ -328.0, 601.0, -136.0 ]
+}
+
+[node name="Audio" parent="SelectBase" instance=ExtResource( 2 )]
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 10.0
+script = ExtResource( 3 )
+
+[node name="EffectsStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="finished" from="MusicStreamPlayer" to="MusicStreamPlayer" method="_on_MusicStreamPlayer_finished"]
